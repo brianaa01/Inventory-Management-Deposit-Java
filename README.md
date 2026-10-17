@@ -1,24 +1,24 @@
-# Sistem de Gestiune a Stocurilor (Java Desktop App)
+# Inventory Management System (Java Desktop App)
 
-Acest proiect este o aplicație desktop dezvoltată în **Java (Swing)** pentru gestionarea inventarului unui depozit. A fost realizat pentru a aplica în mod practic principiile Programării Orientate pe Obiecte (OOP), arhitectura MVC și integrarea cu o bază de date relațională.
+This project is a desktop application developed in **Java (Swing)** for managing warehouse inventory. It was created to practically apply Object-Oriented Programming (OOP) principles, the MVC architecture, and relational database integration.
 
-## Arhitectură și Concepte OOP
-Aplicația respectă principiile de design software curat:
-* **Model-View-Controller (MVC):** Separarea clară între interfața grafică (`DepozitView`), logica de business (`DepozitController`) și persistența datelor.
-* **Moștenire și Polimorfism:** Produsele sunt modelate printr-o ierarhie de clase (clasa de bază `Produs` extinsă de `Mobila`, `Electronic`, `Consumabil`).
-* **Interfețe (Contracts):** Folosirea interfețelor precum `Cautabil` și `Stocabil` pentru decuplarea componentelor.
-* **Tratarea Excepțiilor:** Excepții custom (ex: `StocInsuficientException`) pentru a preveni erorile la tranzacțiile de inventar.
+## Architecture & OOP Concepts
+The application adheres to clean software design principles:
+- **Model-View-Controller (MVC):** Clear separation between the graphical user interface (`DepozitView`), business logic (`DepozitController`), and data persistence.
+- **Inheritance & Polymorphism:** Products are modeled using a class hierarchy (the base class `Produs` extended by `Mobila`, `Electronic`, `Consumabil`).
+- **Interfaces (Contracts):** Utilization of interfaces such as `Cautabil` and `Stocabil` to decouple components.
+- **Exception Handling:** Custom exceptions (e.g., `StocInsuficientException`) to prevent errors during inventory transactions.
 
-## Funcționalități Principale
-* **Gestiunea Produselor:** Adăugarea, căutarea și eliminarea produselor din depozit pe diverse categorii.
-* **Persistența Datelor:** Conexiune la o bază de date **PostgreSQL** prin JDBC (`DataBaseManager`).
-* **Automatizare SQL:** Structura bazei de date folosește **Triggere** și funcții (`actualizeaza_stoc()`) pentru a calcula automat cantitățile (IN/OUT) la fiecare tranzacție, direct la nivel de backend.
+## Core Features
+- **Product Management:** Adding, searching, and removing products from the warehouse across various categories.
+- **Data Persistence:** Connection to a **PostgreSQL** database via JDBC (`DataBaseManager`).
+- **SQL Automation:** The database structure utilizes **Triggers** and functions (`actualizeaza_stoc()`) to automatically calculate quantities (IN/OUT) for every transaction directly at the backend level.
 
-## Tehnologii Folosite
-* **Limbaj:** Java (Swing GUI)
-* **Concepte:** OOP, MVC, Custom Exceptions
-* **Bază de date:** PostgreSQL (JDBC, Triggers, Functions)
+## Technologies Used
+- **Language:** Java (Swing GUI)
+- **Concepts:** OOP, MVC, Custom Exceptions
+- **Database:** PostgreSQL (JDBC, Triggers, Functions)
 
-## Structura Proiectului
-* `src/` - Conține codul sursă Java organizat modular.
-* `baza_de_date.sql` - Scriptul SQL complet pentru recrearea tabelelor, a relațiilor (Foreign Keys) și a triggerelor automate.
+## Project Structure
+- `src/` - Contains the modularly organized Java source code.
+- `baza_de_date.sql` - The complete SQL script for recreating tables, relationships (Foreign Keys), and automatic triggers.
